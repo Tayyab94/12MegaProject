@@ -116,6 +116,15 @@ export class Service {
         }
     }
 
+    GetFileForDownload(fileId) {
+        try {
+            return this.storage.getFileDownload(Config.appWriteBucketId, fileId);
+        } catch (error) {
+            console.log("Appwrite Service :: GetFilePreview :: error ", error);
+            return false;
+        }
+    }
+
 }
 
 
